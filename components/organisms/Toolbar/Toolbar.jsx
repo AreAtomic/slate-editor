@@ -63,6 +63,7 @@ const Toolbar = () => {
             <select
                 value={activeMark(editor, format)}
                 onChange={(e) => changeMarkData(e, format)}
+                className="bg-component-two-500 text-low-contrast-50"
             >
                 {options.map((item, index) => (
                     <option key={index} value={item.value}>
@@ -79,7 +80,7 @@ const Toolbar = () => {
     }
 
     return (
-        <div className="toolbar">
+        <div className="z-[10] relative rounded-sm bg-component-one-500 drop-shadow flex items-center py-3">
             {toolbarGroups.map((group, index) => (
                 <span key={index} className="toolbar-grp">
                     {group.map((element) => {

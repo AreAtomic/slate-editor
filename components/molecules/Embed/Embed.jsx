@@ -43,7 +43,7 @@ const Embed = ({ editor, format }) => {
                 <Icon icon={format} />
             </Button>
             {showInput && (
-                <div className="popup">
+                <div className="absolute left-0 bg-component-one-800 py-1 px-3 z-[10] rounded">
                     <form onSubmit={handleFormSubmit}>
                         <input
                             type="text"
@@ -55,31 +55,10 @@ const Embed = ({ editor, format }) => {
                                     url: e.target.value,
                                 }))
                             }
-                        />
-                        <input
-                            type="text"
-                            placeholder="Enter width of frame"
-                            value={formData.width}
-                            onChange={(e) =>
-                                setFormData((prev) => ({
-                                    ...prev,
-                                    width: e.target.value,
-                                }))
-                            }
-                        />
-                        <input
-                            type="text"
-                            placeholder="Enter height of frame"
-                            value={formData.height}
-                            onChange={(e) =>
-                                setFormData((prev) => ({
-                                    ...prev,
-                                    height: e.target.value,
-                                }))
-                            }
+                            className="bg-component-one-500 p-1 rounded-sm"
                         />
 
-                        <Button type="submit">Save</Button>
+                        <Button type="submit" className="bg-high-contrast-500 opacity-100 p-2 mt-2 rounded">Save</Button>
                     </form>
                 </div>
             )}

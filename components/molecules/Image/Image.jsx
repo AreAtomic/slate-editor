@@ -6,7 +6,7 @@ const Image = ({ attributes, element, children }) => {
     const { url, width, height } = element
     const selected = useSelected()
     const focused = useFocused()
-    console.log(width, height)
+
     return (
         <div
             {...attributes}
@@ -19,7 +19,7 @@ const Image = ({ attributes, element, children }) => {
         >
             <div
                 contentEditable={false}
-                style={{ width: width, height: height }}
+                style={{ width: 'auto', height: 'auto' }}
             >
                 <img alt={element.alt} src={url} />
             </div>

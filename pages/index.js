@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
     return (
-        <div className={styles.container}>
+        <div className="px-8 bg-component-two-500 pb-6">
             <Head>
                 <title>Slate Editor - Areatomic</title>
                 <meta
@@ -13,7 +13,6 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
             <Editor />
         </div>
     )

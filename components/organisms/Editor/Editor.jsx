@@ -13,6 +13,7 @@ import withEmbeds from '../../../plugins/withEmbeds.js'
 
 const Element = (props) => {
     const { attributes, children, element } = props
+    console.log(props)
 
     switch (element.type) {
         case 'headingOne':
@@ -120,8 +121,9 @@ const Leaf = ({ attributes, children, leaf }) => {
         children = <span style={{ fontSize: size }}>{children}</span>
     }
     if (leaf.fontFamily) {
+        console.log('font', leaf)
         const family = fontFamilyMap[leaf.fontFamily]
-        children = <span style={{ fontFamily: family }}>{children}</span>
+        children = <span className={`font-[${leaf.fontFamily}]`}>{children}</span>
     }
     return <span {...attributes}>{children}</span>
 }
@@ -137,7 +139,7 @@ const SlateEditor = () => {
     const [value, setValue] = useState([
         {
             type: 'paragaph',
-            children: [{ text: 'First line of text in Slate JS. ' }],
+            children: [{ text: '' }],
         },
     ])
 
@@ -154,11 +156,9 @@ const SlateEditor = () => {
             onChange={(newValue) => setValue(newValue)}
         >
             <Toolbar />
-            <div
-                className="editor-wrapper"
-            >
+            <div className="border-t bg-component-one-500 h-fit min-h-screen p-3 drop-shadow-sm relative rounded">
                 <Editable
-                    placeholder="Write something"
+                    placeholder="Ecrire l'article ..."
                     renderElement={renderElement}
                     renderLeaf={renderLeaf}
                 />

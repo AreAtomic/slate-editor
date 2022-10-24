@@ -5,9 +5,14 @@ const toolbarGroups = [
             format: 'fontFamily',
             type: 'dropdown',
             options: [
-                { text: 'Sans Serif', value: 'sans' },
-                { text: 'Serif', value: 'serif' },
-                { text: 'MonoSpace', value: 'monospace' },
+                {
+                    text: 'Calibri',
+                    value: 'sans-serif',
+                },
+                {
+                    text: 'Roboto',
+                    value: 'Roboto',
+                },
             ],
         },
         {

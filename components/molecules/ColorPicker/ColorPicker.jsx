@@ -57,7 +57,7 @@ const ColorPicker = ({ format, editor }) => {
         setHexValue(newHex)
     }
     return (
-        <div className="color-picker popup-wrapper" ref={colorPickerRef}>
+        <div className="color-picker inline relative" ref={colorPickerRef}>
             <button
                 style={{
                     color: showOptions ? 'black' : activeMark(editor, format),

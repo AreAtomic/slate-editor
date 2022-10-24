@@ -11,7 +11,7 @@ const Link = ({ attributes, element, children }) => {
     const focused = useFocused()
     return (
         <div className="link">
-            <a href={element.href} {...attributes}>
+            <a href={element.href} {...attributes} onDoubleClick={() => console.log(selected, focused)}>
                 {children}
             </a>
             {selected && focused && (
